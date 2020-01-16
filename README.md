@@ -49,3 +49,7 @@ ctx: device id, ctx < 0 for cpu, ctx-th gpu otherwise.
 epochs: how many epochs to train.
 /path/to/model_weights: path to trained model weights if you want to resume training.
 ```
+## Performance
+I trained on a dataset composed by many public cross-age datasets and VGG-face2 general dataset. Best verification accuracy on CSCD_VS was 98%.
+
+## Keeps updating...
