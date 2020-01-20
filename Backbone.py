@@ -3,17 +3,11 @@ import torch
 import torchvision
 import torch.optim as optim
 import torch.nn.functional as F
-import math, time
-from tabulate import tabulate
 from torchvision import datasets, models, transforms
 from torch.nn import Parameter
-import os, time, glob
-from datetime import datetime
-from itertools import cycle
+import os
 import numpy as np
-import traceback
 from utils import accuracy
-from others_cosface import MarginCosineProduct
 
 class OECNN_Backbone(nn.Module):
     def __init__(self, init_method, drop_rate=0):
