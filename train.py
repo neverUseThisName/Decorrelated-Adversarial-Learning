@@ -3,14 +3,12 @@ import torch.nn as nn
 import torch
 import torchvision
 import torch.optim as optim
-import time
 from torchvision import datasets, models, transforms
 from torch.utils.data import DataLoader
 from torch import autograd
-import os, time, glob, copy
-import numpy as np
+import os
 from custom_datasets import ImageFolderWithAgeGroup
-from meta import mixture, FGNET, age_cutoffs
+from meta import age_cutoffs
 from utils import Recorder
 from itertools import chain
 
