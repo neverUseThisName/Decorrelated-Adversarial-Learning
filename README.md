@@ -1,3 +1,4 @@
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/decorrelated-adversarial-learning-for-age/age-invariant-face-recognition-on-cacdvs)](https://paperswithcode.com/sota/age-invariant-face-recognition-on-cacdvs?p=decorrelated-adversarial-learning-for-age)
 # Decorrelated-Adversarial-Learning
 
 This is an unofficial pytorch implementation for the 2019 CVPR paper 'Decorrelated Adversarial Learning for Age-Invariant Face Recognition' from Tencent AI Lab'
