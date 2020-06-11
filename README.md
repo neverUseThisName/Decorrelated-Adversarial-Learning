@@ -6,6 +6,7 @@ This is an unofficial pytorch implementation for the 2019 CVPR paper 'Decorrelat
 ## How to train on your own dataset
 
 If you want to start fresh training, follow the procedures.
+(or use the backbone and train with your own scritps)
 
 ### Prepare your data
 #### Folder structure
