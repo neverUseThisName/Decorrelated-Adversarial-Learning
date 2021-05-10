@@ -45,4 +45,4 @@ class ImageFolderWithAgeGroup(ImageFolder):
         for i, cut in enumerate(self.cutoffs):
             if age <= cut:
                 return i
-            return len(self.cutoffs)
+        return len(self.cutoffs)
