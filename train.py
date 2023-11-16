@@ -33,14 +33,14 @@ class Trainer():
             self.ctx = torch.device(f'cuda:{ctx}')
     
     def train(self, epochs, start_epoch, save_path=None):
-        self.train_ds = ImageFolderWithAgeGroup(self.dataset['pat'], self.dataset['pos'], \
-                        age_cutoffs, self.dataset['train_root'], transform=transforms.Compose(\
+        self.train_ds = ImageFolderWithAgeGroup(pat=self.dataset['pat'], pos=self.dataset['pos'], \
+                        cutoffs=age_cutoffs, root=self.dataset['train_root'], transform=transforms.Compose(\
                             [transforms.RandomHorizontalFlip(p=0.5), transforms.ToTensor(), \
-                                transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5))]))
+                                transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)), transforms.Resize((96, 112))]))
         self.train_ld = DataLoader(self.train_ds, shuffle=True, batch_size=self.batch_size)
         if self.dataset['val_root'] is not None:
             self.val_ds = ImageFolderWithAgeGroup(self.dataset['pat'], self.dataset['pos'], age_cutoffs, self.dataset['val_root'], \
-                        transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5))]))
+                        transform=transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5)), transforms.Resize((96, 112))]))
             self.val_ld = DataLoader(self.val_ds, shuffle=True, batch_size=self.batch_size)
         self.model = self.model.to(self.ctx)
         for epoch in range(epochs):
